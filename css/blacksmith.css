@@ -48,6 +48,10 @@
 html {
   font-size: 1em;
   line-height: 1.4;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
+
 }
 body {
   margin: 0;
@@ -68,12 +72,13 @@ body {
   /*box-shadow: -1rem 0 3rem #000;*/
   padding: 0;
   transition: .2s;
-  margin-bottom: 20px;
   overflow: hidden;
   min-height: min-content;
   display: inline-block;
-  max-width: 500px;
+  width: max-content;
+  max-width: min(600px,80vw);
   min-width: 150px;
+  margin: 20px;
 }
 
 .prod div{
@@ -170,11 +175,25 @@ body {
     --hover-gradient:linear-gradient(90deg,#ff8a00,#e52e71);
     --invtext: white;
     --button-idle: rgb(225,225,255);
-    --red-bg: linear-gradient(270deg, rgba(0, 174, 255, 0.22), rgba(0, 255, 102, 0.35));
+    --red-bg: linear-gradient(270deg, rgba(0, 174, 255, 0.22), rgba(0, 36, 255, 0.35));
   }
 
   .prod{
     box-shadow: 0 0 1.4rem rgba(0,0,0,0.6);
     -webkit-box-shadow: black;
+  }
+}
+@media (max-width: 600px){
+  main {
+    align-items: center;
+    width: 100%;
+    text-align: center;
+
+  }
+
+  .prod{
+    alignment: center;
+    text-align: left;
+
   }
 }
