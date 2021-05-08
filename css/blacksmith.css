@@ -121,6 +121,8 @@ body {
 .prod img {
   width: 100%;
   display: inline;
+  object-fit: cover;
+  height: 350px;
   padding: -20px;
 }
 

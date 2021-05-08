@@ -51,6 +51,7 @@ iframe {
   z-index: 1;
 }
 .section {
+  pointer-events: none;
   display: flex;
   min-height: 100vh;
   position: relative;
@@ -108,22 +109,30 @@ iframe {
 }
 
 .section__text h2{
-    display: block;
-  text-shadow: 0 2px 3px rgba(0,0,0,0.5);
+  display: block;
+  text-shadow: 0 5px 18px rgba(0,0,0,0.9);
 }
 
 
 .section__text h3{
   display: block;
   font-size: min(30pt, 2vw);
-  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+  text-shadow: 0 3px 12px rgba(0,0,0,0.9);
 
 }
 
 
+
 .section__text p{
   display: inline-block;
-  text-shadow: 0 6px 6px rgba(0,0,0,0.5);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.7);
+}
+
+.section__text a{
+  display: block;
+  font-size: min(30pt, 2vw);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.7);
+  color: white;
 }
 
 .section__img__inner {
@@ -145,6 +154,10 @@ iframe {
   filter: blur(0);
 
 
+}
+
+.section.active {
+  pointer-events: visible;
 }
 
 .section.active iframe {
@@ -231,7 +244,6 @@ mobile-only{
     transform: translateX(-45vw);
     position: relative;
     z-index: 100;
-
   }
 
   .section__img__inner:hover~.section__body, .section__img__inner:focus-within~.section__body, .section__body:focus-within~.section__img, .section__body:hover~.section__img{
@@ -247,25 +259,43 @@ mobile-only{
 
 @media(max-width: 640px){
   .section__text h3{
-    font-size: min(60pt, 3vw);
+    font-size: min(60pt, 4vw);
   }
 
- h2{
-   font-size: min(100pt, 10vw);
- }
+  h2{
+    font-size: min(100pt, 8vw);
+  }
 
- video{
-   display: none;
- }
 
- mobile-only{
-   display: block;
- }
+  video{
+    display: none;
+  }
+
+  mobile-only{
+    display: block;
+  }
 }
 
-.section a{
-  color: white;
-  font-size: min(20pt, 4vw);
 
+@media(max-aspect-ratio: 1/1){
+  .section__body{
+    transform: translateX(0);
+  }
+
+  p{
+    font-size: min(40pt, 6vw);
+  }
+
+  .section > * {
+    width: unset;
+    margin-left: 15px;
+    margin-right: 15px;
+    font-size: 1.5em;
+  }
 }
 
+.blurry_bg{
+  background: rgba(0,0,0,0);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
