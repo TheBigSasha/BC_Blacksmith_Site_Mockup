@@ -74,11 +74,12 @@ body {
   transition: .2s;
   overflow: hidden;
   min-height: min-content;
-  display: inline-block;
-  width: max-content;
-  max-width: min(600px,80vw);
+  display: block;
+  width: 80%;
   min-width: 150px;
-  margin: 20px;
+  margin: auto;
+  margin-bottom: 20px;
+
 }
 
 .prod div{
@@ -146,11 +147,6 @@ body {
 .bottom{
   width: 100%;
   bottom: 0;
-}
-
-.prod:hover{
-  transform: scale(1.05);
-  overflow: visible;
 }
 
 .prod:hover img{
